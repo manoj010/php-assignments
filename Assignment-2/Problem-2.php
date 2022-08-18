@@ -9,21 +9,27 @@
 <body>
     <?php
 
-    function evaluate($name, $attendance, $hygiene, $rating) {
-        if ($attendance < 80 && $hygiene < 50) {
-            echo "$name, You are fired from Rojan Kirana Pasal";
+        function evaluate($name, $attendance, $hygiene, $rating) {
+            if ($attendance <= 100 && $hygiene <= 100 && $rating <= 10) {
+                if ($attendance < 80 && $hygiene < 50) {
+                    echo "$name, You are fired from Rojan Kirana Pasal";
+                }
+
+                elseif ($hygiene < 50 && $rating < 2) {
+                    echo "$name, You are fired from Rojan Kirana Pasal";
+                }
+
+                else { 
+                    echo "Not fired for now.";
+                }
+            }
+
+            else { 
+                echo "Value must not be greater than 100.";
+            }
         }
 
-        elseif ($hygiene < 50 && $rating < 2) {
-            echo "$name, You are fired from Rojan Kirana Pasal";
-        }
-
-        else { 
-            echo "Not fired for now.";
-        }
-    }
-
-    evaluate("Kushal Karki", 90, 70, 3);
+        evaluate("Kushal Karki", 20, 70, 3);
 
     ?>
 </body>

@@ -10,20 +10,26 @@
     <?php
 
         function evaluate($name, $attendance, $hygiene, $rating) {
-            if ($attendance < 80) {
-                echo "$name, You are fired from Rojan Kirana Pasal";
-            }
+            if ($attendance <= 100 && $hygiene <= 100 && $rating <= 10) {
+                if ($attendance < 80) {
+                    echo "$name, You are fired from Rojan Kirana Pasal";
+                }
 
-            elseif ($hygiene < 50) {
-                echo "$name, You are fired from Rojan Kirana Pasal";
-            }
+                elseif ($hygiene < 50) {
+                    echo "$name, You are fired from Rojan Kirana Pasal";
+                }
 
-            elseif ($rating < 2) {
-                echo "$name, You are fired from Rojan Kirana Pasal";
+                elseif ($rating < 2) {
+                    echo "$name, You are fired from Rojan Kirana Pasal";
+                }
+
+                else { 
+                    echo "Not fired for now.";
+                }
             }
 
             else { 
-                echo "Not fired for now.";
+                echo "Value must not be greater than 100.";
             }
         }
 
